@@ -158,13 +158,13 @@ def addLink(name, url, iconimage):
     return ok
 
 def addDir(name, url, mode, iconimage):
-    u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)
-    ok=True
-    liz=xbmcgui.ListItem(name, iconImage="DefaultFolder.png", thumbnailImage=iconimage)
-    liz.setInfo( type="Video", infoLabels={ "Title": name } )
-    liz.setProperty("fanart_image", "special://home/addons/plugin.video.giantbomb/fanart.jpg")
-    ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
-    return ok
+u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)
+ok=True
+liz=xbmcgui.ListItem(name, iconImage="DefaultFolder.png", thumbnailImage=iconimage)
+liz.setInfo( type="Video", infoLabels={ "Title": name } )
+liz.setProperty("fanart_image", "special://home/addons/plugin.video.giantbomb/fanart.jpg")
+ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
+return ok
 
 params=get_params()
 url=None
